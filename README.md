@@ -1,16 +1,26 @@
-# cats_facts
+<h1 align="center"> Cats Facts </h1>  
+<p align="center">
+      <img src="https://github.com/e-medeiros1/cats-facts/assets/73318684/08641733-f337-482f-817c-1b23fdb385e0.png" width="160" alt="Logo CatsFacts"/></br></br>
 
-A new Flutter project.
 
-## Getting Started
+<img src="https://img.shields.io/badge/dart-C.svg?style=for-the-badge&logo=dart&color=152030">
+<img src="https://img.shields.io/badge/flutter-C.svg?style=for-the-badge&logo=flutter&color=0468D7"> 
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-%23323330.svg?style=for-the-badge&logo=visual-studio-code&logoColor=FFFFFF&color=2F74C0">   </h2>
 
-This project is a starting point for a Flutter application.
+<h2> Sobre </h2>
+<p >
+ Caso de estudo de API com uma abordagem mais sofisticada usando http e ValueNotifier.
+</p>  
 
-A few resources to get you started if this is your first Flutter project:
+<h3>Layout no Figma</h3>
+https://www.figma.com/file/3vWWvwCidZvdBhqRoVZYup/Cats-Facts?type=design&node-id=2-2&t=dz1l23MPECc0jfnC-0
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<h3>API utilizada</h3>
+https://cat-fact.herokuapp.com/facts
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h3> HomePage </h3>  
+<img src="https://github.com/e-medeiros1/cats-facts/assets/73318684/7f27bbf0-fe91-407c-8c01-a2652daf328f.png" width="800" alt="Home page"/></br>   
+
+   >Esse projeto foi desenvolvido ❤️ por **[@erimedeiros](https://www.linkedin.com/in/erimedeiros/)**.<br> 
+
+   ---
