@@ -65,10 +65,8 @@ class _HomePageState extends State<HomePage> {
                       builder: (context, child) {
                         if (apiController.isLoading.value == true) {
                           return Center(
-                            child: Lottie.network(
-                                'https://assets6.lottiefiles.com/packages/lf20_9zddpfah.json',
-                                fit: BoxFit.cover,
-                                height: context.percentHeight(.1)),
+                            child: CircularProgressIndicator(
+                                color: context.colors.white),
                           );
                         }
                         if (apiController.messageError.value.isNotEmpty) {
@@ -109,12 +107,13 @@ class _HomePageState extends State<HomePage> {
                       apiController.shuffleList();
                     });
                   }),
-                  Lottie.network(
-                      'https://assets9.lottiefiles.com/packages/lf20_tr1pjkop.json',
-                      fit: BoxFit.cover,
-                      height: isWeb
-                          ? context.percentHeight(.4)
-                          : context.percentHeight(.28)),
+                  Lottie.asset(
+                    'assets/images/cat.json',
+                    fit: BoxFit.cover,
+                    height: isWeb
+                        ? context.percentHeight(.4)
+                        : context.percentHeight(.28),
+                  ),
                 ],
               );
             }),
