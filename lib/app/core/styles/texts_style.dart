@@ -8,7 +8,7 @@ class TextsStyle {
     return _instance!;
   }
 
-  String get font => 'Poppins';
+  String get font => 'Volkhov';
   TextStyle get textLight => const TextStyle(fontWeight: FontWeight.w300);
   TextStyle get textRegular => const TextStyle(fontWeight: FontWeight.normal);
   TextStyle get textMedium => const TextStyle(fontWeight: FontWeight.w500);
