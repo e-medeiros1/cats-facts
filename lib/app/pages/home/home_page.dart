@@ -3,8 +3,12 @@ import 'package:cats_facts/app/core/helper/size_extensions.dart';
 import 'package:cats_facts/app/core/styles/colors_style.dart';
 import 'package:cats_facts/app/core/styles/texts_style.dart';
 import 'package:cats_facts/app/data/http/http_client.dart';
+import 'package:cats_facts/app/pages/home/components/custom_text.dart';
 import 'package:cats_facts/app/repository/cat_repository_interface.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+
+import 'components/custom_elevated_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,12 +39,8 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 20),
-                Text(
-                  'CATS FACTS',
-                  style: context.textsStyle.textTitle.copyWith(
-                      fontSize: context.percentHeight(.07),
-                      color: context.colors.white),
-                ),
+                CustomText(
+                    text: 'CATS FACTS', fontSize: context.percentHeight(.07)),
                 Text(
                   'Discover a random (but important!) cat fact!',
                   style: context.textsStyle.textRegular.copyWith(
@@ -60,7 +60,12 @@ class _HomePageState extends State<HomePage> {
                     ]),
                     builder: (context, child) {
                       if (apiController.isLoading.value == true) {
-                        return const Center(child: CircularProgressIndicator());
+                        return Center(
+                          child: Lottie.network(
+                              'https://assets6.lottiefiles.com/packages/lf20_9zddpfah.json',
+                              fit: BoxFit.cover,
+                              height: context.percentHeight(.1)),
+                        );
                       }
                       if (apiController.messageError.value.isNotEmpty) {
                         return Center(
@@ -68,12 +73,11 @@ class _HomePageState extends State<HomePage> {
                       }
                       if (apiController.state.value.isEmpty) {
                         return Center(
-                            child: Text(
-                          'Facts not found!',
-                          style: context.textsStyle.textTitle.copyWith(
-                              fontSize: context.percentHeight(.02),
-                              color: context.colors.white),
-                        ));
+                          child: CustomText(
+                            text: 'Facts not found!',
+                            fontSize: context.percentHeight(.02),
+                          ),
+                        );
                       } else {
                         return ListView.builder(
                           itemCount: 1,
@@ -96,28 +100,15 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
-                ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(context.colors.primary),
-                        elevation: const MaterialStatePropertyAll(1),
-                        padding:
-                            const MaterialStatePropertyAll(EdgeInsets.all(15)),
-                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)))),
-                    onPressed: () {
-                      setState(() {
-                        apiController.shuffleList();
-                      });
-                    },
-                    child: Text(
-                      'Get a new fact!',
-                      style: context.textsStyle.textRegular.copyWith(
-                          fontSize: context.percentHeight(.03),
-                          color: context.colors.white),
-                    )),
-                Image.asset('assets/images/cat.png',
-                    fit: BoxFit.fitHeight, scale: 1.5),
+                CustomElevatedButton(onPressed: () {
+                  setState(() {
+                    apiController.shuffleList();
+                  });
+                }),
+                Lottie.network(
+                    'https://assets9.lottiefiles.com/packages/lf20_tr1pjkop.json',
+                    fit: BoxFit.cover,
+                    height: context.percentHeight(.4)),
               ],
             ),
           ),
